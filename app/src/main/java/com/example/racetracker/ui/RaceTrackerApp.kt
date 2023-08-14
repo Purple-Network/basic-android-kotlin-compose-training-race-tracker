@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -94,6 +95,7 @@ private fun RaceTrackerScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
+            .safeContentPadding()
             .padding(dimensionResource(R.dimen.padding_medium)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -155,7 +157,6 @@ private fun StatusIndicator(
 ) {
     Row {
         Text(participantName, Modifier.padding(end = dimensionResource(R.dimen.padding_small)))
-
         Column(
             modifier = modifier
                 .fillMaxWidth()
@@ -202,7 +203,6 @@ private fun RaceControls(
         Button(onClick = { onRunStateChange(!isRunning) }) {
             Text(if (isRunning) stringResource(R.string.pause) else stringResource(R.string.start))
         }
-
         Button(onClick = onReset) {
             Text(stringResource(R.string.reset))
         }
