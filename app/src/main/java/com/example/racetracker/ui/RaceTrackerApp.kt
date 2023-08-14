@@ -156,7 +156,10 @@ private fun StatusIndicator(
     modifier: Modifier = Modifier
 ) {
     Row {
-        Text(participantName, Modifier.padding(end = dimensionResource(R.dimen.padding_small)))
+        Text(
+            text = participantName,
+            modifier = Modifier.padding(end = dimensionResource(R.dimen.padding_small))
+        )
         Column(
             modifier = modifier
                 .fillMaxWidth()
